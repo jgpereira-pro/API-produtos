@@ -1,5 +1,5 @@
 # Estágio 1: Builder (Compilação)
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 WORKDIR /app
 
 # Copia as configurações da raiz do monorepo
@@ -13,7 +13,7 @@ WORKDIR /app/apps/product-service
 RUN npm run build
 
 # Estágio 2: Runner (Produção)
-FROM node:18-alpine
+FROM node:20-alpine
 WORKDIR /app
 
 # Copia os módulos e o código compilado do estágio anterior
